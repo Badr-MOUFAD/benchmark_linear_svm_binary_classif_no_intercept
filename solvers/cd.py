@@ -62,7 +62,6 @@ class Solver(BaseSolver):
 
         self.beta = np.asarray(beta).flatten()
 
-    @staticmethod
     @njit
     def cd(yX, C, L, n_iter):
         n_samples, n_features = yX.shape
@@ -86,7 +85,6 @@ class Solver(BaseSolver):
 
         return w
 
-    @staticmethod
     @njit
     def sparse_cd(yX_data, yX_indices, yX_indptr, C, L, n_features, n_iter):
         n_samples = len(yX_indptr) - 1
